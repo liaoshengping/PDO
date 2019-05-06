@@ -46,7 +46,7 @@ class PDOs
         $sql= $this->selectgetDataMatch();
         $recordset = $this->dbh->query($sql);
         if(!is_bool($recordset)){
-            $result = $recordset->fetchAll();
+            $result = $recordset->fetchAll(\PDO::FETCH_ASSOC);
         }
         return $result;
     }
